@@ -39,8 +39,6 @@ class _ProfilePagesState extends State<ProfilePages> {
 
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState
     super.initState();
     getPref();
   }
@@ -57,7 +55,6 @@ class _ProfilePagesState extends State<ProfilePages> {
               children: [
                 Text(
                   "My Profile",
-                  // style: regulerTextStyle.copyWith(fontSize: 25),
                 ),
                 InkWell(
                   onTap: () {
@@ -78,14 +75,12 @@ class _ProfilePagesState extends State<ProfilePages> {
               children: [
                 Text(
                   fullName,
-                  //style: boldTextStyle.copyWith(fontSize: 18),
                 ),
                 SizedBox(
                   height: 8,
                 ),
                 Text(
                   "Join at " + createdDate,
-                  //style: lightTextStyle,
                 )
               ],
             ),
@@ -101,14 +96,12 @@ class _ProfilePagesState extends State<ProfilePages> {
               children: [
                 Text(
                   "Phone",
-                  //style: lightTextStyle,
                 ),
                 SizedBox(
                   height: 8,
                 ),
                 Text(
                   phone,
-                  //style: boldTextStyle.copyWith(fontSize: 18),
                 ),
               ],
             ),
@@ -123,14 +116,12 @@ class _ProfilePagesState extends State<ProfilePages> {
               children: [
                 Text(
                   "Email",
-                  //style: lightTextStyle,
                 ),
                 SizedBox(
                   height: 8,
                 ),
                 Text(
                   email,
-                  //style: boldTextStyle.copyWith(fontSize: 18),
                 ),
               ],
             ),
@@ -146,14 +137,12 @@ class _ProfilePagesState extends State<ProfilePages> {
               children: [
                 Text(
                   "Address",
-                  // style: lightTextStyle,
                 ),
                 SizedBox(
                   height: 8,
                 ),
                 Text(
                   address,
-                  // style: boldTextStyle.copyWith(fontSize: 18),
                 ),
               ],
             ),

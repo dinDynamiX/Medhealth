@@ -79,8 +79,6 @@ class _DetailProductState extends State<DetailProduct> {
 
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState
     super.initState();
     getPref();
   }
@@ -110,7 +108,6 @@ class _DetailProductState extends State<DetailProduct> {
                   ),
                   Text(
                     "Detail Product",
-                    // style: regulerTextStyle.copyWith(fontSize: 25),
                   )
                 ])),
             SizedBox(
@@ -128,15 +125,12 @@ class _DetailProductState extends State<DetailProduct> {
                 children: [
                   Text(
                     widget.productModel.nameProduct,
-                    //style: regulerTextStyle.copyWith(fontSize: 20),
                   ),
                   SizedBox(
                     height: 16,
                   ),
                   Text(
                     widget.productModel.description,
-                    // style: regulerTextStyle.copyWith(
-                    //     fontSize: 14, color: greyBoldColor),
                     textAlign: TextAlign.justify,
                   ),
                   SizedBox(
@@ -145,26 +139,11 @@ class _DetailProductState extends State<DetailProduct> {
                   Row(
                     children: [
                       Spacer(),
-                      Text(
-                        "Rp " +
-                            priceFormat
-                                .format(int.parse(widget.productModel.price)),
-                        //style: boldTextStyle.copyWith(fontSize: 20),
-                      ),
                     ],
                   ),
                   SizedBox(
                     height: 24,
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: ButtonPrimary(
-                      onTap: () {
-                        addToCart();
-                      },
-                      text: "ADD TO CART",
-                    ),
-                  )
                 ],
               ),
             ),

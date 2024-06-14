@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:medhealth/main_page.dart';
 import 'package:medhealth/network/api/url_api.dart';
 import 'package:medhealth/network/model/pref_profile_model.dart';
@@ -28,12 +29,14 @@ class _LoginPagesState extends State<LoginPages> {
     });
   }
 
-  submitLogin() async {
-    var urlLogin = Uri.parse(BASEURL.apiLogin);
-    final response = await http.post(urlLogin, body: {
-      "email": emailController.text,
-      "password": passwordController.text
-    });
+  Future<void> submitLogin() async {
+    var apiLogin = "http://192.168.119.146/medhealth_db/login_api.php";
+    var urlLogin = Uri.parse(apiLogin);
+    var map = <String, dynamic>{};
+    map['email'] = emailController.text;
+    map['password'] = passwordController.text;
+    var response = await http.post(Uri.parse(apiLogin), body: map);
+    print(response.body);
     final data = jsonDecode(response.body);
     int value = data['value'];
     String message = data['message'];
@@ -114,21 +117,17 @@ class _LoginPagesState extends State<LoginPages> {
                 ),
                 Text(
                   "LOGIN",
-                  // style: regulerTextStyle.copyWith(fontSize: 25),
                 ),
                 SizedBox(
                   height: 8,
                 ),
                 Text(
                   "Login into your account",
-                  // style: regulerTextStyle.copyWith(
-                      // fontSize: 15, color: greyLightColor),
                 ),
                 SizedBox(
                   height: 24,
                 ),
 
-                // NOTE :: TEXTFIELD
 
                 Container(
                   padding: EdgeInsets.only(left: 16),
@@ -149,8 +148,6 @@ class _LoginPagesState extends State<LoginPages> {
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Email Address',
-                        // hintStyle: lightTextStyle.copyWith(
-                        //     fontSize: 15, color: greyLightColor)
                     ),
                   ),
                 ),
@@ -189,8 +186,6 @@ class _LoginPagesState extends State<LoginPages> {
                         ),
                         border: InputBorder.none,
                         hintText: 'Password',
-                        // hintStyle: lightTextStyle.copyWith(
-                        //     fontSize: 15, color: greyLightColor)
                     ),
                   ),
                 ),
@@ -202,8 +197,12 @@ class _LoginPagesState extends State<LoginPages> {
                   child: ButtonPrimary(
                     text: "LOGIN",
                     onTap: () {
+                      print('login');
+                      print(emailController.text);
+                      print(passwordController.text);
                       if (emailController.text.isEmpty ||
                           passwordController.text.isEmpty) {
+                            print('pengecekan');
                         showDialog(
                             context: context,
                             builder: (context) => AlertDialog(
@@ -218,6 +217,7 @@ class _LoginPagesState extends State<LoginPages> {
                                   ],
                                 ));
                       } else {
+                        print('pengecekan 2');
                         submitLogin();
                       }
                     },
@@ -231,8 +231,6 @@ class _LoginPagesState extends State<LoginPages> {
                   children: [
                     Text(
                       "Don't have an account? ",
-                      // style: lightTextStyle.copyWith(
-                      //     color: greyLightColor, fontSize: 15),
                     ),
                     InkWell(
                       onTap: () {
@@ -244,8 +242,6 @@ class _LoginPagesState extends State<LoginPages> {
                       },
                       child: Text(
                         "Create account",
-                        // style: boldTextStyle.copyWith(
-                        //     color: greenColor, fontSize: 15),
                       ),
                     )
                   ],

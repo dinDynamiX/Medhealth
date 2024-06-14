@@ -29,7 +29,6 @@ class ProductModel {
   final String imageProduct;
   final String price;
   final String status;
-  final String createdAt;
 
   ProductModel({
     this.idProduct,
@@ -39,7 +38,6 @@ class ProductModel {
     this.imageProduct,
     this.price,
     this.status,
-    this.createdAt,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> data) {
@@ -51,7 +49,6 @@ class ProductModel {
       imageProduct: data['image'],
       price: data['price'],
       status: data['status'],
-      createdAt: data['created_at'],
     );
   }
 }

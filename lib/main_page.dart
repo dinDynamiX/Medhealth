@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medhealth/pages/history_page.dart';
+import 'package:medhealth/pages/pharmacy_list_page.dart';
 import 'package:medhealth/pages/home_page.dart';
 import 'package:medhealth/pages/profile_page.dart';
 import 'package:medhealth/theme.dart';
@@ -14,7 +14,7 @@ class _MainPagesState extends State<MainPages> {
 
   final _pageList = [
     HomePages(),
-    HistoryPages(),
+    PharmacyListPage(),
     ProfilePages(),
   ];
 
@@ -32,7 +32,7 @@ class _MainPagesState extends State<MainPages> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.assignment), label: "History"),
+              icon: Icon(Icons.map), label: "Apotik"),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_box_rounded), label: "Profile"),
         ],

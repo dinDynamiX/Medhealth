@@ -48,8 +48,6 @@ class _SearchProductState extends State<SearchProduct> {
 
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState
     super.initState();
     getProduct();
   }
@@ -94,8 +92,6 @@ class _SearchProductState extends State<SearchProduct> {
                           color: Color(0xffb1d8b2),
                         ),
                         hintText: "Search medicine ...",
-                        // hintStyle: regulerTextStyle.copyWith(
-                        //     color: Color(0xffb0d8b2))
                     ),
                   ),
                 ),

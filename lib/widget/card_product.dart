@@ -27,7 +27,6 @@ class CardProduct extends StatelessWidget {
           ),
           Text(
             nameProduct,
-            // style: regulerTextStyle,
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -35,7 +34,6 @@ class CardProduct extends StatelessWidget {
           ),
           Text(
             "Rp " + priceFormat.format(int.parse(price)),
-            // style: boldTextStyle,
           )
         ],
       ),

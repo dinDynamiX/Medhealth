@@ -91,23 +91,15 @@ class _RegisterPagesState extends State<RegisterPages> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Text(
-                //   "REGISTER",
-                //   style: regulerTextStyle.copyWith(fontSize: 25),
-                // ),
                 SizedBox(
                   height: 8,
                 ),
-                // Text(
-                //   "Register new your account",
-                //   style: regulerTextStyle.copyWith(
-                //       fontSize: 15, color: greyLightColor),
                 // ),
                 SizedBox(
                   height: 24,
                 ),
 
-                // NOTE :: TEXTFIELD
+                // TEXTFIELD
                 Container(
                   padding: EdgeInsets.only(left: 16),
                   height: 50,
@@ -127,8 +119,6 @@ class _RegisterPagesState extends State<RegisterPages> {
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Full Name',
-                        // hintStyle: lightTextStyle.copyWith(
-                        //     fontSize: 15, color: greyLightColor)
                     ),
                   ),
                 ),
@@ -154,8 +144,6 @@ class _RegisterPagesState extends State<RegisterPages> {
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Email Address',
-                        // hintStyle: lightTextStyle.copyWith(
-                        //     fontSize: 15, color: greyLightColor)
                     ),
                   ),
                 ),
@@ -181,8 +169,6 @@ class _RegisterPagesState extends State<RegisterPages> {
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Phone',
-                        // hintStyle: lightTextStyle.copyWith(
-                        //     fontSize: 15, color: greyLightColor)
                     ),
                   ),
                 ),
@@ -208,8 +194,6 @@ class _RegisterPagesState extends State<RegisterPages> {
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Home Address',
-                        // hintStyle: lightTextStyle.copyWith(
-                        //     fontSize: 15, color: greyLightColor)
                     ),
                   ),
                 ),
@@ -248,8 +232,6 @@ class _RegisterPagesState extends State<RegisterPages> {
                         ),
                         border: InputBorder.none,
                         hintText: 'Password',
-                        // hintStyle: lightTextStyle.copyWith(
-                        //     fontSize: 15, color: greyLightColor)
                     ),
                   ),
                 ),
@@ -293,8 +275,6 @@ class _RegisterPagesState extends State<RegisterPages> {
                   children: [
                     Text(
                       "Already have an account? ",
-                      // style: lightTextStyle.copyWith(
-                      //     color: greyLightColor, fontSize: 15),
                     ),
                     InkWell(
                       onTap: () {
@@ -306,8 +286,6 @@ class _RegisterPagesState extends State<RegisterPages> {
                       },
                       child: Text(
                         "Login now",
-                        // style: boldTextStyle.copyWith(
-                        //     color: greenColor, fontSize: 15),
                       ),
                     )
                   ],

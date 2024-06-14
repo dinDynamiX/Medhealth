@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:medhealth/network/api/url_api.dart';
 import 'package:medhealth/network/model/pref_profile_model.dart';
 import 'package:medhealth/network/model/product_model.dart';
-import 'package:medhealth/pages/cart_pages.dart';
 import 'package:medhealth/pages/detail_product.dart';
 import 'package:medhealth/pages/search_product.dart';
 import 'package:medhealth/theme.dart';
@@ -78,8 +77,6 @@ class _HomePagesState extends State<HomePages> {
 
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState
     super.initState();
     getPref();
     getCategory();
@@ -108,46 +105,9 @@ class _HomePagesState extends State<HomePages> {
                 ),
                 Text(
                   "Find a medicine or\nvitamins with MEDHEALTH!",
-                  // style: regulerTextStyle.copyWith(
-                  //     fontSize: 15, color: greyBoldColor),
                 )
               ],
             ),
-            Stack(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CartPages(totalCart)));
-                  },
-                  icon: Icon(
-                    Icons.shopping_cart_outlined,
-                    color: greenColor,
-                  ),
-                ),
-                jumlahCart == "0"
-                    ? SizedBox()
-                    : Positioned(
-                        right: 10,
-                        top: 10,
-                        child: Container(
-                          height: 13,
-                          width: 13,
-                          decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Center(
-                              child: Text(
-                            jumlahCart,
-                            // style: regulerTextStyle.copyWith(
-                            //     color: whiteColor, fontSize: 12),
-                          )),
-                        ),
-                      )
-              ],
-            )
           ],
         ),
         SizedBox(
@@ -173,8 +133,6 @@ class _HomePagesState extends State<HomePages> {
                     color: Color(0xffb1d8b2),
                   ),
                   hintText: "Search medicine ...",
-                  // hintStyle:
-                  //     regulerTextStyle.copyWith(color: Color(0xffb0d8b2))
               ),
             ),
           ),
@@ -184,11 +142,12 @@ class _HomePagesState extends State<HomePages> {
         ),
         Text(
           "Medicine & Vitamins by Category",
-          //style: regulerTextStyle.copyWith(fontSize: 16),
         ),
         SizedBox(
           height: 14,
         ),
+
+        //medical list
         GridView.builder(
             physics: ClampingScrollPhysics(),
             itemCount: listCategory.length,
@@ -205,10 +164,11 @@ class _HomePagesState extends State<HomePages> {
                     print("$index, $filter");
                   });
                 },
+                child: SingleChildScrollView(
                 child: CardCategory(
                   imageCategory: x.image,
                   nameCategory: x.category,
-                ),
+                )),
               );
             }),
         SizedBox(
@@ -216,7 +176,8 @@ class _HomePagesState extends State<HomePages> {
         ),
         filter
             ? index == 7
-                ? Text("Feature on proggress")
+                ? Text("Data ini belum di masukan oleh kelompok saya")
+                //list product
                 : GridView.builder(
                     physics: ClampingScrollPhysics(),
                     itemCount: listCategory[index].product.length,

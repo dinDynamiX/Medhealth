@@ -22,7 +22,6 @@ class WidgetIlustration extends StatelessWidget {
         ),
         Text(
           title,
-          // style: regulerTextStyle.copyWith(fontSize: 25),
           textAlign: TextAlign.center,
         ),
         SizedBox(
@@ -32,16 +31,12 @@ class WidgetIlustration extends StatelessWidget {
           children: [
             Text(
               subtitle1,
-              // style: regulerTextStyle.copyWith(
-              //     fontSize: 15, color: greyLightColor),
             ),
             SizedBox(
               height: 8,
             ),
             Text(
               subtitle2,
-              // style: regulerTextStyle.copyWith(
-              //     fontSize: 15, color: greyLightColor),
             ),
             SizedBox(
               height: 40,

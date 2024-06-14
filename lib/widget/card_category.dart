@@ -19,7 +19,6 @@ class CardCategory extends StatelessWidget {
         ),
         Text(
           nameCategory,
-          // style: mediumTextStyle.copyWith(fontSize: 10),
         )
       ],
     );
